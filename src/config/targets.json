@@ -1,0 +1,169 @@
+{
+  "daily_targets": [
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "description": "Complete high-priority tasks and maintain focus",
+      "weekly_goal_minutes": 1800,
+      "daily_goal_minutes": 240,
+      "weight": 9,
+      "preferred_time_of_day": "morning",
+      "categories": ["work", "study", "projects"],
+      "color": "#8B5CF6"
+    },
+    {
+      "id": "fitness",
+      "name": "Physical Fitness",
+      "description": "Exercise, gym, sports, or physical activities",
+      "weekly_goal_minutes": 300,
+      "daily_goal_minutes": 60,
+      "weight": 8,
+      "preferred_time_of_day": "morning",
+      "categories": ["gym", "running", "sports", "yoga"],
+      "color": "#10B981"
+    },
+    {
+      "id": "learning",
+      "name": "Learning & Development",
+      "description": "Skill development, reading, courses, research",
+      "weekly_goal_minutes": 420,
+      "daily_goal_minutes": 90,
+      "weight": 7,
+      "preferred_time_of_day": "evening",
+      "categories": ["reading", "courses", "research", "practice"],
+      "color": "#F59E0B"
+    },
+    {
+      "id": "social",
+      "name": "Social & Family",
+      "description": "Quality time with family, friends, and relationships",
+      "weekly_goal_minutes": 600,
+      "daily_goal_minutes": 120,
+      "weight": 8,
+      "preferred_time_of_day": "evening",
+      "categories": ["family", "friends", "social", "calls"],
+      "color": "#EF4444"
+    },
+    {
+      "id": "health",
+      "name": "Health & Wellness",
+      "description": "Self-care, medical appointments, mental health",
+      "weekly_goal_minutes": 180,
+      "daily_goal_minutes": 30,
+      "weight": 9,
+      "preferred_time_of_day": "flexible",
+      "categories": ["meditation", "doctor", "self-care", "sleep"],
+      "color": "#06B6D4"
+    },
+    {
+      "id": "creativity",
+      "name": "Creative Expression",
+      "description": "Art, music, writing, creative projects",
+      "weekly_goal_minutes": 240,
+      "daily_goal_minutes": 45,
+      "weight": 6,
+      "preferred_time_of_day": "flexible",
+      "categories": ["art", "music", "writing", "design"],
+      "color": "#8B5CF6"
+    },
+    {
+      "id": "organization",
+      "name": "Organization & Planning",
+      "description": "Administrative tasks, planning, organizing",
+      "weekly_goal_minutes": 120,
+      "daily_goal_minutes": 20,
+      "weight": 5,
+      "preferred_time_of_day": "morning",
+      "categories": ["planning", "admin", "organizing", "emails"],
+      "color": "#6B7280"
+    }
+  ],
+  "weekly_targets": [
+    {
+      "id": "deep_work",
+      "name": "Deep Work Sessions",
+      "description": "Focused work sessions without interruptions",
+      "weekly_goal": 10,
+      "weight": 9,
+      "minimum_duration": 90,
+      "preferred_times": ["09:00-12:00", "14:00-17:00"],
+      "color": "#7C3AED"
+    },
+    {
+      "id": "exercise_frequency",
+      "name": "Exercise Frequency",
+      "description": "Regular exercise or physical activity",
+      "weekly_goal": 4,
+      "weight": 8,
+      "minimum_duration": 45,
+      "preferred_times": ["06:00-08:00", "18:00-20:00"],
+      "color": "#059669"
+    },
+    {
+      "id": "social_connections",
+      "name": "Social Connections",
+      "description": "Meaningful social interactions",
+      "weekly_goal": 5,
+      "weight": 7,
+      "minimum_duration": 60,
+      "preferred_times": ["17:00-22:00"],
+      "color": "#DC2626"
+    },
+    {
+      "id": "skill_development",
+      "name": "Skill Development",
+      "description": "Learning new skills or improving existing ones",
+      "weekly_goal": 7,
+      "weight": 8,
+      "minimum_duration": 60,
+      "preferred_times": ["19:00-21:00"],
+      "color": "#D97706"
+    }
+  ],
+  "priority_policies": {
+    "urgent_override": {
+      "enabled": true,
+      "max_reschedules_per_day": 3,
+      "protected_categories": ["health", "fixed_appointments"]
+    },
+    "balance_enforcement": {
+      "enabled": true,
+      "max_imbalance_threshold": 0.3,
+      "rebalance_frequency": "weekly"
+    },
+    "deadline_priority": {
+      "enabled": true,
+      "urgency_multiplier": 1.5,
+      "deadline_window_hours": 24
+    },
+    "energy_optimization": {
+      "enabled": true,
+      "high_energy_tasks": ["productivity", "learning", "creativity"],
+      "low_energy_tasks": ["organization", "admin", "planning"],
+      "peak_hours": ["09:00-12:00", "15:00-17:00"]
+    }
+  },
+  "notification_preferences": {
+    "task_start_reminder": {
+      "enabled": true,
+      "minutes_before": 5,
+      "show_for_categories": ["all"]
+    },
+    "task_end_prompt": {
+      "enabled": true,
+      "completion_timeout_minutes": 5,
+      "show_for_categories": ["all"]
+    },
+    "daily_summary": {
+      "enabled": true,
+      "time": "20:00",
+      "include_tomorrow_preview": true
+    },
+    "weekly_review": {
+      "enabled": true,
+      "day": "sunday",
+      "time": "19:00",
+      "include_target_analysis": true
+    }
+  }
+}

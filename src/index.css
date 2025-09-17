@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Intelligent Scheduling Agent Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core neutral colors */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Brand colors - Modern purple theme */
+    --primary: 268 83% 58%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 268 83% 53%;
+    --primary-glow: 273 100% 70%;
+
+    --secondary: 270 40% 95%;
+    --secondary-foreground: 268 20% 25%;
+    --secondary-hover: 270 40% 90%;
+
+    --muted: 270 40% 96%;
+    --muted-foreground: 270 16% 46%;
+
+    --accent: 280 85% 60%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 280 85% 55%;
+
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --success-bg: 142 76% 95%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    --warning-bg: 38 92% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* UI elements */
+    --border: 270 31.8% 88%;
+    --input: 270 31.8% 92%;
+    --ring: 268 83% 58%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(268 83% 58%), hsl(273 100% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(280 85% 60%), hsl(285 85% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(270 40% 98%), hsl(270 40% 96%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(270 40% 98%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(268 25% 15% / 0.05);
+    --shadow-md: 0 4px 8px -2px hsl(268 25% 15% / 0.1), 0 2px 4px -1px hsl(268 25% 15% / 0.06);
+    --shadow-lg: 0 10px 25px -5px hsl(268 25% 15% / 0.15), 0 4px 10px -2px hsl(268 25% 15% / 0.1);
+    --shadow-glow: 0 0 20px hsl(273 100% 70% / 0.3);
+    --shadow-task: 0 2px 8px hsl(268 25% 15% / 0.08);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    /* Task priority colors */
+    --priority-critical: 0 84% 60%;
+    --priority-high: 25 95% 53%;
+    --priority-medium: 268 83% 58%;
+    --priority-low: 280 85% 60%;
+
+    /* Schedule colors */
+    --fixed-task: 268 83% 58%;
+    --flexible-task: 280 85% 60%;
+    --incomplete-task: 25 95% 53%;
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 15% 95%;
+
+    --card: 215 25% 10%;
+    --card-foreground: 210 15% 95%;
+
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 15% 95%;
+
+    --primary: 273 100% 70%;
+    --primary-foreground: 270 30% 8%;
+    --primary-hover: 273 100% 75%;
+    --primary-glow: 280 100% 80%;
+
+    --secondary: 270 32.6% 15%;
+    --secondary-foreground: 270 15% 85%;
+    --secondary-hover: 270 32.6% 20%;
+
+    --muted: 270 32.6% 12%;
+    --muted-foreground: 270 15% 65%;
+
+    --accent: 285 85% 70%;
+    --accent-foreground: 270 30% 8%;
+    --accent-hover: 285 85% 65%;
+
+    --success: 142 76% 40%;
+    --success-bg: 142 76% 10%;
+
+    --warning: 38 92% 55%;
+    --warning-bg: 38 92% 10%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 215 30% 8%;
+
+    --border: 270 32.6% 18%;
+    --input: 270 32.6% 15%;
+    --ring: 273 100% 70%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(273 100% 70%), hsl(280 100% 80%));
+    --gradient-accent: linear-gradient(135deg, hsl(285 85% 70%), hsl(290 85% 75%));
+    --gradient-subtle: linear-gradient(180deg, hsl(270 30% 8%), hsl(270 32.6% 10%));
+    --gradient-card: linear-gradient(145deg, hsl(270 32.6% 10%), hsl(270 32.6% 12%));
+
+    --shadow-glow: 0 0 25px hsl(280 100% 80% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .task-priority-critical {
+    @apply border-l-4;
+    border-left-color: hsl(var(--priority-critical));
+  }
+
+  .task-priority-high {
+    @apply border-l-4;
+    border-left-color: hsl(var(--priority-high));
+  }
+
+  .task-priority-medium {
+    @apply border-l-4;
+    border-left-color: hsl(var(--priority-medium));
+  }
+
+  .task-priority-low {
+    @apply border-l-4;
+    border-left-color: hsl(var(--priority-low));
+  }
+
+  .task-fixed {
+    background: linear-gradient(135deg, hsl(var(--fixed-task) / 0.1), hsl(var(--fixed-task) / 0.05));
+  }
+
+  .task-flexible {
+    background: linear-gradient(135deg, hsl(var(--flexible-task) / 0.1), hsl(var(--flexible-task) / 0.05));
+  }
+
+  .task-incomplete {
+    background: linear-gradient(135deg, hsl(var(--incomplete-task) / 0.1), hsl(var(--incomplete-task) / 0.05));
+  }
+}
