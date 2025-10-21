@@ -46,7 +46,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Aj1359/chrono-assist-bot.git
+   git clone https://github.com/Aj1359/AI-scheduler.git
    cd chrono-assist-bot
    ```
 
